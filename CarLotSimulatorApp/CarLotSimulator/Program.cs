@@ -7,7 +7,7 @@ namespace CarLotSimulator
         static void Main(string[] args)
         {
             //TODO
-            var carList = new CarLot();
+
             //Create a seperate class file called Car
             //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
             //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
@@ -20,6 +20,9 @@ namespace CarLotSimulator
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
+
+            var carList = new CarLot();
+
             Car car1 = new Car();
             car1.Year = 1990;
             car1.Make = "Pontiac";
@@ -32,8 +35,8 @@ namespace CarLotSimulator
             car1.MakeHonkNoise(car1.HonkNoise);
             Console.WriteLine();
 
-            carList.OurCars.Add(car1);
-
+            carList.AddCar(car1);
+            
 
             Car car2 = new Car() {Year = 2005, Make = "Cadillac", Model = "Escalade", EngineNoise = "loud", HonkNoise = "not working", IsDriveable = "not driveable" };
 
@@ -41,7 +44,9 @@ namespace CarLotSimulator
             car2.MakeHonkNoise();
             Console.WriteLine();
 
-            carList.OurCars.Add(car2);
+            carList.AddCar(car2);
+
+            
 
 
             Car car3 = new Car(1998, "Jeep", "Grand Cherokee", "loud", "normal", "driveable");
@@ -50,8 +55,9 @@ namespace CarLotSimulator
             car3.MakeHonkNoise(car3.HonkNoise);
             Console.WriteLine();
 
-            carList.OurCars.Add(car3);
+            carList.AddCar(car3);
 
+            
 
             //*************BONUS X 2*************//
 

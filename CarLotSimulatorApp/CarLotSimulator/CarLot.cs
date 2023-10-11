@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CarLotSimulator
 {
-    internal class CarLot
+    public class CarLot
     {
-        public List<Car> OurCars { get; set; }
+        public List<Car> OurCars { get; set; } = new List<Car>(); //Define it all in one line
 
-        public CarLot() 
-        {
-            OurCars = new List<Car>();
-        }
 
+        public static int numberOfCars;
+        
         public void GiveDetails() 
         {
             foreach (var car in OurCars) 
@@ -23,5 +22,12 @@ namespace CarLotSimulator
             }
         }
 
+        public void AddCar(Car car) 
+        { 
+            OurCars.Add(car);
+            numberOfCars++;
+            Console.WriteLine($"numberOfCars = {numberOfCars}");
+            Console.WriteLine();
+        } 
     }
 }
